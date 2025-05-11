@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود با رمز عبور</title>
+    <style>
+        /* Reset و فونت */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #000000dc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        
+        .light-box h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 24px;
+        }
+        
+        .light-box p {
+            position: relative;
+            z-index: 1;
+            font-size: 16px;
+        }
+
+        /* استایل کارت فرم */
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+
+            width: 300px;
+            height: 370px;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            margin: 50px auto;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .login-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.3) 45%,
+                rgba(255, 255, 255, 0) 60%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            animation: light-move 4s linear infinite;
+        }
+        
+        @keyframes light-move {
+            0% {
+                transform: rotate(30deg) translate(-30%, -30%);
+            }
+            100% {
+                transform: rotate(30deg) translate(30%, 30%);
+            }
+
+        }
+
+        .login-box h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        /* استایل فیلد رمز عبور */
+        #passwordInput {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        #passwordInput:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* استایل دکمه ورود */
+        button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff000077;
+        }
+
+        /* استایل پیام خطا */
+        #errorMessage {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ff4444;
+        }
+
+        /* رسپانسیو برای موبایل */
+        @media (max-width: 480px) {
+            .login-box {
+                padding: 20px;
+            }
+
+            #passwordInput, button {
+                padding: 10px;
+            }
+        }
+   
+
+
+
+.typed-out {
+    color: whitesmoke;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  font-size: 1.6rem;
+  width: 0;
+}
+.container {
+  display: inline-block;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+.typed-out{
+    overflow: hidden;
+    border-right: .15em solid rgba(255, 166, 0, 0);
+    white-space: nowrap;
+    font-size: 1.0rem;
+    width: 0;
+    animation: typing 1s forwards;
+}
+.icon{
+    border-radius: 100px;
+}
+    </style>
+
+</head>
+<body>
+
+    <div class="login-box">
+        
+            <!-- <div class="container"> -->
+        <h4 class="typed-out">وبسایت اختصاصی کلاس 202</h4>
+    
+    
+    <img width="100px" class="icon" src="./202 edited.jpeg" />
+    <h1 style="color:whitesmoke;">لطفاً رمز عبور را وارد کنید</h1>
+    <input type="password" id="passwordInput" placeholder="رمز عبور">
+    <button onclick="checkPassword()">ورود</button>
+    <p id="errorMessage"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "ArMy202!xv7@6pQ"; 
+            const userInput = document.getElementById("passwordInput").value;
+            const errorElement = document.getElementById("errorMessage");
+
+            if (userInput === correctPassword) {
+                window.location.href = "202.html";
+            } else {
+                errorElement.textContent = "رمز عبور اشتباه است!";
+            }
+        }
+    </script>
+</body>
+</html>
